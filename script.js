@@ -1,4 +1,4 @@
-function accessDashboard(departmentName) {
+function accessDashboard(departmentName, link = "/#") {
   // Show toast notification
   const toast = document.getElementById("toast");
   toast.textContent = `Accessing ${departmentName} Dashboard...`;
@@ -10,6 +10,7 @@ function accessDashboard(departmentName) {
   }, 3000);
 
   // In a real application, this would navigate to the dashboard
+  window.href = `#${departmentName.replace(/\s+/g, "-").toLowerCase()}`;
   console.log(`${departmentName} Dashboard accessed`);
 }
 
@@ -32,7 +33,11 @@ const departments = [
     tag: "HR",
     description:
       "Maintain and track company assets. Manage assignments, asset lifecycle, and return processes for employees.",
-    onclick: () => accessDashboard("Assets Management System"),
+    onclick: () =>
+      accessDashboard(
+        "Assets Management System",
+        "http://asset.mysteryrooms.co.in/"
+      ),
   },
   {
     name: "Employee Review System",
@@ -40,7 +45,11 @@ const departments = [
     tag: "HR",
     description:
       "Evaluate employee performance, collect feedback, and track improvement over time with structured reviews.",
-    onclick: () => accessDashboard("Employee Review System"),
+    onclick: () =>
+      accessDashboard(
+        "Employee Review System",
+        "https://feedback.mysteryrooms.work/"
+      ),
   },
   {
     name: "Jibble",
@@ -48,7 +57,8 @@ const departments = [
     tag: "HR",
     description:
       "Track employee attendance, shift timing, and productivity using modern time-tracking tools.",
-    onclick: () => accessDashboard("Jibble"),
+    onclick: () =>
+      accessDashboard("Jibble", "https://web.jibble.io/people/members"),
   },
   {
     name: "Salary Box",
@@ -74,7 +84,11 @@ const departments = [
     tag: "Sales",
     description:
       "Manage and track bookings for Mystery Rooms. Monitor sales performance, conversion rates, and revenue insights.",
-    onclick: () => accessDashboard("Mystery Rooms Booking Management System"),
+    onclick: () =>
+      accessDashboard(
+        "Mystery Rooms Booking Management System",
+        "https://bookings.mysteryrooms.in/admin/home"
+      ),
   },
   {
     name: "Mystery Rooms Team Entry System",
@@ -82,7 +96,11 @@ const departments = [
     tag: "Sales",
     description:
       "Track and manage team entries for Mystery Rooms. View performance metrics and team participation data.",
-    onclick: () => accessDashboard("Mystery Rooms Team Entry System"),
+    onclick: () =>
+      accessDashboard(
+        "Mystery Rooms Team Entry System",
+        "https://mrims.mysteryrooms.in/home/login"
+      ),
   },
   {
     name: "CRM",
@@ -90,7 +108,7 @@ const departments = [
     tag: "Sales",
     description:
       "Centralized platform to track leads, manage clients, and analyze conversion metrics for sales growth.",
-    onclick: () => accessDashboard("CRM"),
+    onclick: () => accessDashboard("CRM", "https://sales.mysteryrooms.work/"),
   },
   {
     name: "Challenge Rooms Booking Management System",
@@ -98,7 +116,8 @@ const departments = [
     tag: "Sales",
     description:
       "Handle Challenge Rooms bookings and manage payment and customer details to track business performance.",
-    onclick: () => accessDashboard("Challenge Rooms Booking Management System"),
+    onclick: () =>
+      accessDashboard("Challenge Rooms Booking Management System", ""),
   },
   {
     name: "Challenge Rooms Team Entry System",
@@ -106,7 +125,11 @@ const departments = [
     tag: "Sales",
     description:
       "Manage team entries, timings, and overall participation metrics for Challenge Rooms events.",
-    onclick: () => accessDashboard("Challenge Rooms Team Entry System"),
+    onclick: () =>
+      accessDashboard(
+        "Challenge Rooms Team Entry System",
+        "https://crims.mysteryrooms.work/"
+      ),
   },
 
   // Operations Department
@@ -116,7 +139,11 @@ const departments = [
     tag: "Operations",
     description:
       "Manage and resolve customer or internal tickets efficiently. Monitor response time, priorities, and resolutions.",
-    onclick: () => accessDashboard("Support Ticket System"),
+    onclick: () =>
+      accessDashboard(
+        "Support Ticket System",
+        "https://support.mysteryrooms.work/"
+      ),
   },
   {
     name: "Inventory Management System",
@@ -132,7 +159,8 @@ const departments = [
     tag: "Operations",
     description:
       "Process sales transactions, monitor daily sales, and manage receipts and billing records.",
-    onclick: () => accessDashboard("POS System"),
+    onclick: () =>
+      accessDashboard("POS System", "https://pos.mysteryrooms.work/"),
   },
   {
     name: "Vendor Payment Form",
@@ -140,7 +168,8 @@ const departments = [
     tag: "Operations",
     description:
       "Handle vendor payments, approvals, and tracking of transaction histories with transparency.",
-    onclick: () => accessDashboard("Vendor Payment Form"),
+    onclick: () =>
+      accessDashboard("Vendor Payment Form", "https://mybill.onl/upload"),
   },
   {
     name: "District App Dashboard",
@@ -180,7 +209,11 @@ const departments = [
     tag: "Operations",
     description:
       "Manage company rides, expenses, and usage analytics for corporate travel through Uber.",
-    onclick: () => accessDashboard("Uber Business Dashboard"),
+    onclick: () =>
+      accessDashboard(
+        "Uber Business Dashboard",
+        "https://www.uber.com/in/en/business/"
+      ),
   },
 
   // Customer Support Department
@@ -190,7 +223,8 @@ const departments = [
     tag: "Customer Support",
     description:
       "Automate and manage WhatsApp conversations with customers. Improve response rate and support automation.",
-    onclick: () => accessDashboard("Doubletick WhatsApp API"),
+    onclick: () =>
+      accessDashboard("Doubletick WhatsApp API", "https://web.doubletick.io/"),
   },
   {
     name: "SmartWhap WhatsApp API",
@@ -198,7 +232,8 @@ const departments = [
     tag: "Customer Support",
     description:
       "Streamline customer engagement through WhatsApp automation. Manage templates, responses, and lead tracking.",
-    onclick: () => accessDashboard("SmartWhap WhatsApp API"),
+    onclick: () =>
+      accessDashboard("SmartWhap WhatsApp API", "https://app.smartwhap.com/"),
   },
   {
     name: "Teleforce VOIP System",
@@ -206,7 +241,11 @@ const departments = [
     tag: "Customer Support",
     description:
       "Handle calls and manage communication logs using VOIP technology for seamless customer interactions.",
-    onclick: () => accessDashboard("Teleforce VOIP System"),
+    onclick: () =>
+      accessDashboard(
+        "Teleforce VOIP System",
+        "https://platform.teleforce.cx/"
+      ),
   },
 
   // Finance Department
@@ -242,7 +281,11 @@ const departments = [
     tag: "Business Development",
     description:
       "Send bulk SMS campaigns, manage templates, and analyze open and delivery metrics for outreach.",
-    onclick: () => accessDashboard("Allots SMS System"),
+    onclick: () =>
+      accessDashboard(
+        "Allots SMS System",
+        "https://www.alots.in/sms-panel/login.php"
+      ),
   },
 
   // Backend Department
