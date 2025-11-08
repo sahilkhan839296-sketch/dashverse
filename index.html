@@ -9,218 +9,61 @@
   <body>
     <!-- Header -->
     <header class="header">
+      <div class="header-bg"></div>
+      <div class="header-orbs"></div>
       <div class="header-content">
-        <h1 class="header-title">DepartVerse - Access Department at One Place</h1>
-        <p class="header-subtitle">
-          Access and manage department-specific dashboards
-        </p>
+        <div class="header-text">
+          <h1 class="header-title">Mystery Rooms — Department Access Space</h1>
+          <p class="header-subtitle">
+            One place for HR, Sales, Operations, Support, Finance & more.
+          </p>
+        </div>
+        <img
+          class="logo"
+          src="https://mysteryrooms.in/public/setting/Logo-2.png"
+          alt="MysteryRoomslogo"
+        />
       </div>
     </header>
 
     <!-- Main Content -->
     <main class="container">
+      <div class="search select-wrapper">
+        <input
+          type="text"
+          placeholder="Search Department..."
+          class="searchInput"
+          onchange="search(event)"
+        />
+        <select class="filterSelect" onchange="search(event,false)">
+          <option value="">Select Department</option>
+        </select>
+        <span class="selectArrow">▼</span>
+      </div>
+
       <section class="dashboard-section">
-        <div class="dashboards-grid">
-          <!-- Sales Dashboard Card -->
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Sales Dashboard</h2>
-              <span class="card-tag">Sales</span>
-            </div>
-            <p class="card-description">
-              Track revenue, sales metrics, and customer acquisition. Monitor
-              real-time sales performance across all regions and teams.
-            </p>
-            <button class="btn btn-primary" onclick="accessDashboard('Sales')">
-              Access Dashboard
-            </button>
-          </div>
-
-          <!-- Marketing Dashboard Card -->
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Marketing Dashboard</h2>
-              <span class="card-tag">Marketing</span>
-            </div>
-            <p class="card-description">
-              Analyze campaign performance, customer engagement, and ROI
-              metrics. View analytics for all marketing channels.
-            </p>
-            <button
-              class="btn btn-primary"
-              onclick="accessDashboard('Marketing')"
-            >
-              Access Dashboard
-            </button>
-          </div>
-
-          <!-- Finance Dashboard Card -->
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Finance Dashboard</h2>
-              <span class="card-tag">Finance</span>
-            </div>
-            <p class="card-description">
-              Monitor financial operations, budgets, and expense tracking.
-              Comprehensive reporting on cash flow and projections.
-            </p>
-            <button
-              class="btn btn-primary"
-              onclick="accessDashboard('Finance')"
-            >
-              Access Dashboard
-            </button>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Finance Dashboard</h2>
-              <span class="card-tag">Finance</span>
-            </div>
-            <p class="card-description">
-              Monitor financial operations, budgets, and expense tracking.
-              Comprehensive reporting on cash flow and projections.
-            </p>
-            <button
-              class="btn btn-primary"
-              onclick="accessDashboard('Finance')"
-            >
-              Access Dashboard
-            </button>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Finance Dashboard</h2>
-              <span class="card-tag">Finance</span>
-            </div>
-            <p class="card-description">
-              Monitor financial operations, budgets, and expense tracking.
-              Comprehensive reporting on cash flow and projections.
-            </p>
-            <button
-              class="btn btn-primary"
-              onclick="accessDashboard('Finance')"
-            >
-              Access Dashboard
-            </button>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Finance Dashboard</h2>
-              <span class="card-tag">Finance</span>
-            </div>
-            <p class="card-description">
-              Monitor financial operations, budgets, and expense tracking.
-              Comprehensive reporting on cash flow and projections.
-            </p>
-            <button
-              class="btn btn-primary"
-              onclick="accessDashboard('Finance')"
-            >
-              Access Dashboard
-            </button>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Finance Dashboard</h2>
-              <span class="card-tag">Finance</span>
-            </div>
-            <p class="card-description">
-              Monitor financial operations, budgets, and expense tracking.
-              Comprehensive reporting on cash flow and projections.
-            </p>
-            <button
-              class="btn btn-primary"
-              onclick="accessDashboard('Finance')"
-            >
-              Access Dashboard
-            </button>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Finance Dashboard</h2>
-              <span class="card-tag">Finance</span>
-            </div>
-            <p class="card-description">
-              Monitor financial operations, budgets, and expense tracking.
-              Comprehensive reporting on cash flow and projections.
-            </p>
-            <button
-              class="btn btn-primary"
-              onclick="accessDashboard('Finance')"
-            >
-              Access Dashboard
-            </button>
-          </div>
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Finance Dashboard</h2>
-              <span class="card-tag">Finance</span>
-            </div>
-            <p class="card-description">
-              Monitor financial operations, budgets, and expense tracking.
-              Comprehensive reporting on cash flow and projections.
-            </p>
-            <button
-              class="btn btn-primary"
-              onclick="accessDashboard('Finance')"
-            >
-              Access Dashboard
-            </button>
-          </div>
-          <!-- HR Dashboard Card -->
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Human Resources</h2>
-              <span class="card-tag">HR</span>
-            </div>
-            <p class="card-description">
-              Manage employee data, recruitment metrics, and performance
-              reviews. Track attendance and team statistics.
-            </p>
-            <button class="btn btn-primary" onclick="accessDashboard('HR')">
-              Access Dashboard
-            </button>
-          </div>
-
-          <!-- IT Dashboard Card -->
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">IT Operations</h2>
-              <span class="card-tag">IT</span>
-            </div>
-            <p class="card-description">
-              Monitor system health, infrastructure status, and security
-              metrics. Track incidents and maintenance schedules.
-            </p>
-            <button class="btn btn-primary" onclick="accessDashboard('IT')">
-              Access Dashboard
-            </button>
-          </div>
-
-          <!-- Operations Dashboard Card -->
-          <div class="card">
-            <div class="card-header">
-              <h2 class="card-title">Operations Dashboard</h2>
-              <span class="card-tag">Operations</span>
-            </div>
-            <p class="card-description">
-              Oversee production schedules, inventory levels, and operational
-              efficiency. Real-time status updates.
-            </p>
-            <button
-              class="btn btn-primary"
-              onclick="accessDashboard('Operations')"
-            >
-              Access Dashboard
-            </button>
-          </div>
-        </div>
+        <div class="dashboards-grid"></div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-      <p>&copy; 2025 Department Dashboards. All rights reserved.</p>
+    <footer
+      class="jsx-33001e044f197294 mt-6 text-center text-sm text-purple-400 select-none"
+    >
+      Designed and Developed with<!-- -->
+      <span
+        aria-label="love"
+        class="jsx-33001e044f197294 text-red-500 animate-pulse inline-block"
+        >❤️</span
+      >
+      <!-- -->by<!-- -->
+      <a
+        href="https://seoulix.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="jsx-33001e044f197294 text-pink-400 font-semibold hover:underline transition-colors"
+        >Seoulix Technologies</a
+      >
     </footer>
 
     <!-- Toast Notification -->
