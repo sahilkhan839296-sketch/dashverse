@@ -9,8 +9,9 @@ function accessDashboard(departmentName, link = "/#") {
     toast.classList.remove("show");
   }, 3000);
 
+  alert(`Accessing ${link} Dashboard`);
   // In a real application, this would navigate to the dashboard
-  window.href = `#${departmentName.replace(/\s+/g, "-").toLowerCase()}`;
+  window.location.href = `${link}`;
   console.log(`${departmentName} Dashboard accessed`);
 }
 
@@ -33,11 +34,7 @@ const departments = [
     tag: "HR",
     description:
       "Maintain and track company assets. Manage assignments, asset lifecycle, and return processes for employees.",
-    onclick: () =>
-      accessDashboard(
-        "Assets Management System",
-        "http://asset.mysteryrooms.co.in/"
-      ),
+    url: "http://asset.mysteryrooms.co.in/",
   },
   {
     name: "Employee Review System",
@@ -45,11 +42,7 @@ const departments = [
     tag: "HR",
     description:
       "Evaluate employee performance, collect feedback, and track improvement over time with structured reviews.",
-    onclick: () =>
-      accessDashboard(
-        "Employee Review System",
-        "https://feedback.mysteryrooms.work/"
-      ),
+    url: "https://feedback.mysteryrooms.work/",
   },
   {
     name: "Jibble",
@@ -57,8 +50,7 @@ const departments = [
     tag: "HR",
     description:
       "Track employee attendance, shift timing, and productivity using modern time-tracking tools.",
-    onclick: () =>
-      accessDashboard("Jibble", "https://web.jibble.io/people/members"),
+    url: "https://web.jibble.io/people/members",
   },
   {
     name: "Salary Box",
@@ -66,7 +58,7 @@ const departments = [
     tag: "HR",
     description:
       "Manage payroll processing, salary slips, and employee compensation records securely.",
-    onclick: () => accessDashboard("Salary Box"),
+    url: "#",
   },
   {
     name: "Employee Celebration Platform",
@@ -74,7 +66,7 @@ const departments = [
     tag: "HR",
     description:
       "Celebrate employee milestones and track engagement events across the organization.",
-    onclick: () => accessDashboard("Employee Celebration Platform"),
+    url: "#",
   },
 
   // Sales Department
@@ -84,11 +76,7 @@ const departments = [
     tag: "Sales",
     description:
       "Manage and track bookings for Mystery Rooms. Monitor sales performance, conversion rates, and revenue insights.",
-    onclick: () =>
-      accessDashboard(
-        "Mystery Rooms Booking Management System",
-        "https://bookings.mysteryrooms.in/admin/home"
-      ),
+    url: "https://bookings.mysteryrooms.in/admin/home",
   },
   {
     name: "Mystery Rooms Team Entry System",
@@ -96,11 +84,7 @@ const departments = [
     tag: "Sales",
     description:
       "Track and manage team entries for Mystery Rooms. View performance metrics and team participation data.",
-    onclick: () =>
-      accessDashboard(
-        "Mystery Rooms Team Entry System",
-        "https://mrims.mysteryrooms.in/home/login"
-      ),
+    url: "https://mrims.mysteryrooms.in/home/login",
   },
   {
     name: "CRM",
@@ -108,7 +92,7 @@ const departments = [
     tag: "Sales",
     description:
       "Centralized platform to track leads, manage clients, and analyze conversion metrics for sales growth.",
-    onclick: () => accessDashboard("CRM", "https://sales.mysteryrooms.work/"),
+    url: "https://sales.mysteryrooms.work/",
   },
   {
     name: "Challenge Rooms Booking Management System",
@@ -116,8 +100,7 @@ const departments = [
     tag: "Sales",
     description:
       "Handle Challenge Rooms bookings and manage payment and customer details to track business performance.",
-    onclick: () =>
-      accessDashboard("Challenge Rooms Booking Management System", ""),
+    url: "#",
   },
   {
     name: "Challenge Rooms Team Entry System",
@@ -125,11 +108,7 @@ const departments = [
     tag: "Sales",
     description:
       "Manage team entries, timings, and overall participation metrics for Challenge Rooms events.",
-    onclick: () =>
-      accessDashboard(
-        "Challenge Rooms Team Entry System",
-        "https://crims.mysteryrooms.work/"
-      ),
+    url: "https://crims.mysteryrooms.work/",
   },
 
   // Operations Department
@@ -139,11 +118,7 @@ const departments = [
     tag: "Operations",
     description:
       "Manage and resolve customer or internal tickets efficiently. Monitor response time, priorities, and resolutions.",
-    onclick: () =>
-      accessDashboard(
-        "Support Ticket System",
-        "https://support.mysteryrooms.work/"
-      ),
+    url: "https://support.mysteryrooms.work/",
   },
   {
     name: "Inventory Management System",
@@ -151,7 +126,7 @@ const departments = [
     tag: "Operations",
     description:
       "Track stock levels, monitor item usage, and optimize procurement with real-time inventory data.",
-    onclick: () => accessDashboard("Inventory Management System"),
+    url: "#",
   },
   {
     name: "POS System",
@@ -159,8 +134,7 @@ const departments = [
     tag: "Operations",
     description:
       "Process sales transactions, monitor daily sales, and manage receipts and billing records.",
-    onclick: () =>
-      accessDashboard("POS System", "https://pos.mysteryrooms.work/"),
+    url: "https://pos.mysteryrooms.work/",
   },
   {
     name: "Vendor Payment Form",
@@ -168,8 +142,7 @@ const departments = [
     tag: "Operations",
     description:
       "Handle vendor payments, approvals, and tracking of transaction histories with transparency.",
-    onclick: () =>
-      accessDashboard("Vendor Payment Form", "https://mybill.onl/upload"),
+    url: "https://mybill.onl/upload",
   },
   {
     name: "District App Dashboard",
@@ -177,7 +150,7 @@ const departments = [
     tag: "Operations",
     description:
       "Monitor activity, performance, and data analytics across district-level operational systems.",
-    onclick: () => accessDashboard("District App Dashboard"),
+    url: "#",
   },
   {
     name: "Nearby Dashboard",
@@ -185,7 +158,7 @@ const departments = [
     tag: "Operations",
     description:
       "Oversee local performance metrics and nearby service management across multiple locations.",
-    onclick: () => accessDashboard("Nearby Dashboard"),
+    url: "#",
   },
   {
     name: "Jio Business Dashboard",
@@ -193,7 +166,7 @@ const departments = [
     tag: "Operations",
     description:
       "Monitor communication plans, data usage, and connectivity analytics for business operations.",
-    onclick: () => accessDashboard("Jio Business Dashboard"),
+    url: "#",
   },
   {
     name: "Amazon Business Dashboard",
@@ -201,7 +174,7 @@ const departments = [
     tag: "Operations",
     description:
       "Track business orders, purchases, and inventory through Amazon’s business account tools.",
-    onclick: () => accessDashboard("Amazon Business Dashboard"),
+    url: "#",
   },
   {
     name: "Uber Business Dashboard",
@@ -209,11 +182,7 @@ const departments = [
     tag: "Operations",
     description:
       "Manage company rides, expenses, and usage analytics for corporate travel through Uber.",
-    onclick: () =>
-      accessDashboard(
-        "Uber Business Dashboard",
-        "https://www.uber.com/in/en/business/"
-      ),
+    url: "https://www.uber.com/in/en/business/",
   },
 
   // Customer Support Department
@@ -223,8 +192,7 @@ const departments = [
     tag: "Customer Support",
     description:
       "Automate and manage WhatsApp conversations with customers. Improve response rate and support automation.",
-    onclick: () =>
-      accessDashboard("Doubletick WhatsApp API", "https://web.doubletick.io/"),
+    url: "https://web.doubletick.io/",
   },
   {
     name: "SmartWhap WhatsApp API",
@@ -232,8 +200,7 @@ const departments = [
     tag: "Customer Support",
     description:
       "Streamline customer engagement through WhatsApp automation. Manage templates, responses, and lead tracking.",
-    onclick: () =>
-      accessDashboard("SmartWhap WhatsApp API", "https://app.smartwhap.com/"),
+    url: "https://app.smartwhap.com/",
   },
   {
     name: "Teleforce VOIP System",
@@ -241,11 +208,7 @@ const departments = [
     tag: "Customer Support",
     description:
       "Handle calls and manage communication logs using VOIP technology for seamless customer interactions.",
-    onclick: () =>
-      accessDashboard(
-        "Teleforce VOIP System",
-        "https://platform.teleforce.cx/"
-      ),
+    url: "https://platform.teleforce.cx/",
   },
 
   // Finance Department
@@ -255,7 +218,7 @@ const departments = [
     tag: "Finance",
     description:
       "Monitor transactions, settlements, and payment analytics using RazorPay integration.",
-    onclick: () => accessDashboard("RazorPay System"),
+    url: "#",
   },
   {
     name: "Paytm Business Dashboard",
@@ -263,7 +226,7 @@ const departments = [
     tag: "Finance",
     description:
       "View Paytm business transactions, settlements, and payment history for financial insights.",
-    onclick: () => accessDashboard("Paytm Business Dashboard"),
+    url: "#",
   },
   {
     name: "Stripe Dashboard",
@@ -271,7 +234,7 @@ const departments = [
     tag: "Finance",
     description:
       "Track Stripe payments, customer subscriptions, and revenue analytics for online transactions.",
-    onclick: () => accessDashboard("Stripe Dashboard"),
+    url: "#",
   },
 
   // Business Development Department
@@ -281,11 +244,7 @@ const departments = [
     tag: "Business Development",
     description:
       "Send bulk SMS campaigns, manage templates, and analyze open and delivery metrics for outreach.",
-    onclick: () =>
-      accessDashboard(
-        "Allots SMS System",
-        "https://www.alots.in/sms-panel/login.php"
-      ),
+    url: "https://www.alots.in/sms-panel/login.php",
   },
 
   // Backend Department
@@ -295,7 +254,7 @@ const departments = [
     tag: "Backend",
     description:
       "Automate repetitive backend processes and track workflow executions to enhance productivity.",
-    onclick: () => accessDashboard("Automate Task App"),
+    url: "#",
   },
 
   // Automation / IT / Miscellaneous
@@ -305,7 +264,7 @@ const departments = [
     tag: "Automation",
     description:
       "Manage and visualize automated workflows integrating multiple business tools and APIs.",
-    onclick: () => accessDashboard("N8N"),
+    url: "#",
   },
   {
     name: "Keeper Security",
@@ -313,7 +272,7 @@ const departments = [
     tag: "IT",
     description:
       "Store and manage organization passwords securely with enterprise-grade encryption.",
-    onclick: () => accessDashboard("Keeper Security"),
+    url: "#",
   },
   {
     name: "SmartPing",
@@ -321,7 +280,7 @@ const departments = [
     tag: "Monitoring",
     description:
       "Track server uptime, response time, and system availability through live ping metrics.",
-    onclick: () => accessDashboard("SmartPing"),
+    url: "#",
   },
   {
     name: "Fireflies",
@@ -329,7 +288,7 @@ const departments = [
     tag: "Productivity",
     description:
       "Record, transcribe, and analyze meeting conversations for actionable insights.",
-    onclick: () => accessDashboard("Fireflies"),
+    url: "#",
   },
   {
     name: "Zoom Meeting",
@@ -337,7 +296,7 @@ const departments = [
     tag: "Communication",
     description:
       "Manage virtual meetings, track participation, and review recordings for productivity analysis.",
-    onclick: () => accessDashboard("Zoom Meeting"),
+    url: "#",
   },
 ];
 
@@ -420,24 +379,14 @@ function renderDashboards(items) {
           <h1 class="card-title">${department.name}</h1>
         </div>
         <p class="card-description">${department.description}</p>
-        <button class="btn btn-primary" data-dept="${
-          department.name
-        }">Access Dashboard</button>
+        <button class="btn btn-primary" onclick="window.open('${
+          department.url
+        }', '_blank')">Access Dashboard</button>
       </div>
     `;
     departmentContainer.insertAdjacentHTML("beforeend", cardHTML);
   });
 
   // attach events (single delegate for performance)
-  departmentContainer.addEventListener(
-    "click",
-    (e) => {
-      const btn = e.target.closest("button[data-dept]");
-      if (!btn) return;
-      const departmentName = btn.getAttribute("data-dept");
-      accessDashboard(departmentName);
-    },
-    { once: true }
-  ); // prevent stacking multiple listeners if re-rendered
 }
 renderDashboards(departments);
